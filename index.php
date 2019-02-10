@@ -1,3 +1,8 @@
+<?php
+
+echo 'hello world';
+
+?php >
 <html>
 <h1>this is the title</h1>
 <body>
