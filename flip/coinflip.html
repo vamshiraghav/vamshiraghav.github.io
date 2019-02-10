@@ -1,0 +1,138 @@
+<html>
+<head>
+	<title>Flip Coin Game</title>
+	<link rel="stylesheet" type="text/css" href="flipcoin.css">
+	<script type="text/javascript" src="flipcoin_new.js"></script>
+</head>
+<body
+style="background-color:skyblue;" title="Click To Go Top" onload="display();">
+	<!-- Main Heading-->
+	<div style="background-color:transparent;" width="1550px">
+		<center>
+			
+				<u>
+					<b><h1>FLIP COIN GAME</h1></b>
+				</u>
+			
+		</center>
+	</div>
+	<!-- Computer and User wallets-->
+	<div style="display:block;height:120px;width:1550px;">
+		<div style="border:2px dotted yellow;border-radius:20px;float:left;color:white;width:200px;height:100px;text-align:center;">
+			<u><h3>Computer Wallet</h3></u>
+			<p id="c_wallet">100</p>
+		</div>
+		<div style="border:2px dotted blue;border-radius:20px;float:right;color:white;width:200px;height:100px;text-align:center;">
+			<u><h2>Your Wallet</h2></u>
+			<p id="u_wallet">100</p>
+		</div>
+	</div>
+	<!-- Score Board and Main Table -->
+	<div style="display:block;height:310px;width:1550px;">
+		<!-- Score Board Code -->
+		<div style="float:left;height:260px;border:2px solid black;border-radius:10px;">
+			<table  style="background-color:grey;border-bottom-right-radius:10px;border-bottom-left-radius:10px;" title="Score Board" style="" width="350px" align="left" border="1" id="t1">
+			<caption align="left"  style="background-color:grey;border-top-right-radius:10px;border-top-left-radius:10px;"><b><h2 style="color:black">SCORE BOARD</h2></b></caption>
+				<thead>
+					<th>GamePlay</th>
+					<th>Trials</th>
+					<th>Your_Score</th>
+					<th>Comp._Score</th>
+					<th>Status</th>
+				</thead>
+				<tbody id="data" style="background-color:grey;color:white;" height="162px" width="350px">
+				</tbody>
+			</table>
+		</div>
+		<div style="height:280px;">
+			<center>
+				<table id="t2" cellpadding="8px" width="900px" height="200px" border="0">
+					<tbody style="font-size:17px">
+						<tr><td title="Computer Score"><b>Computer Score:</b></td>
+							<td title="Computer Score"><p id="pool_val">0</p></td>
+							<td rowspan="3" style="border:transparent;">
+								<center>
+									<input type="image" title="Click To Toss"  id="flip" height="200" width="200" style="border-radius:20%;" src="coin.gif" onclick="start();" alt="flipcoin">
+								</center>
+							</td>
+						</tr>
+						<tr title="Your Score"><td><b>Your Score:</b></td>
+							<td><p id="score_val">0</p></td>
+						</tr>
+						<tr title="Select No. Of Tosses"><td><b>Enter Number Of Tosses:</b></td>
+							<td><!--
+								<input type="radio" name="flip" style="cursor:pointer;" onclick="myFunction(this.value);" id="radio_val1" value="5" checked>5 
+								<input type="radio" name="flip" style="cursor:pointer;" onclick="myFunction(this.value);" id="radio_val2" value="10">10
+								-->
+								<input type="number" name="flip" onchange="myFunction(this.value)" value="5" id="flip_value" required>
+							</td>
+						</tr>
+						<tr title="Enter Bet And Heads">
+							<td colspan="2"><b>Place Your Bet(RS/-):</b>
+								<input id="bet_value"  type="number" title="Enter Bet Value" maxlength="2" required><b>(<=<span id="limit">100</span>)</b><br>
+								<!--<input type="number" id="heads_value" title="Enter No. Of Heads" size="10"  maxlength="2" required><b> Heads(<span id="span"><=5</span>).</b>-->
+							</td>
+							<td title="Trial Status"><b>Trial:<span id="trials1">0</span>:(TossNo:<span id="tossno">0</span>)( Heads : <span id="heads">0</span> , Tails : <span id="tails">0</span>).</b></td>
+						</tr>
+						<tr>
+							<td colspan="3"><b>Guess Maximum 
+								<input type="radio" name="guess" style="cursor:pointer;" id="radio_val1" value="HEAD" checked>HEADS 
+								(or) <input type="radio" name="guess" style="cursor:pointer;" id="radio_val2" value="TAIL">TAILS</b>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</center>
+		</div>
+	</div>
+	<div style="display:inline;">
+		<center>
+			<input type="button" title="Click To Toss" style="width:120px ;height:40px;cursor:pointer; font-size:20px; border-radius:12px;" id="b1" onclick="toss();" value="Toss">
+			<b title="Trail Count">(Trials:<span id="trials">0</span>)</b>
+			<input type="image" title="Click To Reset" style="width:40px ;height:40px; border-radius:100%;"  id="b2" src="reset.jpg" onclick="reset();">
+		</center>
+	</div>
+	<br>
+	<div>
+		<center>
+			<img  id="img" title="Status" height="300" width="300" style="border-radius:10px;" src="toss.jpg" alt="Win or Lose">
+		</center>
+	</div>
+	<br>
+	<br>
+	<div id="rules">
+		<center>
+			<table width="900" title="Game Rules" id="rules_table" style="font-size:15px;border:none;">
+				<tbody>
+					<tr><td id="r1" colspan="2"><strong><u> To Win The Game ?</u>:</strong><b> Get A Minimum Score Of 100 Or Score More Than Computer Score WithIn 20 Trials To Complete The Game.</b></td><tr>
+					<tr>
+						<td colspan="2"><strong><u>Game Terms</u></strong>:<br>
+								<ul>
+									<li><b> Computer Score </b>= Total Bet Won By Computer ;</li>
+									<li><b> Your Score </b>= Total Bet Won By Player ; </li>
+									<li><b>Tosses </b>= Number Of Coins To Toss At Once;</li>
+									<li><b>1 Trial=</b>Tossing 'n' Coins At Once.</li>
+								</ul>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2"><strong><u>Game Scoring Rules</u>:</strong><br>
+																<ol>
+																	<li>When <b>Your Score Is Zero ,</b> You Are <b>Provided With A Bet Upto 25 RS/-.</b></li>
+																	<li>When <b>Your Score Is Not Zero ,</b> You Can <b>Bet Upto Your Score Value.</b></li>
+																	<li><b>Enter The Bet And Heads Count</b> Based On <b>The Constraints Mentioned Dynamically.</b></li>
+																	<li>Each Time <b>You Win</b> , <b>Bet</b> Will Be <b>Added</b> To <b>Your Score</b> And <b>Bet</b> Is <b>Subtracted</b> From <b>Computer Score</b></li>
+																	<li>Each Time <b>You Lose</b> , <b>Bet</b> Will Be <b>Subtracted</b> from <b>Your Score</b> And <b>Bet</b> Is <b>Added</b> To The <b>Computer Score</b></li>
+																	<li>Player <b>Can Change</b> The <b>Bet</b> And <b>No. Of Heads</b> At <b>Every Trial.</b></li>
+																</ol>
+						</td>
+					</tr>
+				</tbody>							
+			</table>
+		</center>
+	</div>
+	<audio id="myAudio"><source src="coinflip.mp3" type="audio/mpeg"></audio>
+	<audio id="myAudio1"><source src="youwin.mp3" type="audio/mpeg"></audio>
+	<audio id="myAudio2"><source src="youlose.mp3" type="audio/mpeg"></audio>
+</body>
+</html>

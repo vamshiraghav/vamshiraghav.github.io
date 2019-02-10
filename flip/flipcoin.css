@@ -1,0 +1,31 @@
+input[type="number"] {
+   width:50px; border-radius:5px;
+}
+#rules_table td{
+	color:black; background-color:white; opacity:0.8; border:transparent;
+}
+#rules_table,#t2 td {
+	color:black; background-color:white; border:solid 1px; border-radius:15px; background-color:transparent;
+}
+#t2{
+	 border-radius:20px; background-color:transparent; color:black;
+}
+
+#t1 thead tr th{
+	height:20px;background-color:black;color:white;text-align:center;
+}
+#t1 thead,#t1 tbody { display: block; }
+
+#data{
+    /*overflow-y: scroll;*/    /* Trigger vertical scroll    */
+    overflow-x: hidden;  /* Hide the horizontal scroll */
+}
+u{	font-size:16px;
+}
+.spectrum-background {
+    background:
+        linear-gradient(red, transparent),
+        linear-gradient(to top left, lime, transparent),
+        linear-gradient(to top right, blue, transparent);
+    background-blend-mode: screen;
+}
