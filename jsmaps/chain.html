@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script
+src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDGBAs60o53WXgLw4v6GNOFqxTXziOS4Jc&sensor=true">
+</script>
+
+<script>
+var myCenter=new google.maps.LatLng(18.82110115879884,78.62115204334259); 
+var data='';
+
+var cline=new google.maps.LatLng(18.82110115879884,78.62115204334259); 
+var cline1=new google.maps.LatLng(18.817795618247704,78.6231529712677); 
+var cline2=new google.maps.LatLng(18.815662976950584,78.62532019615173); 
+var cline3=new google.maps.LatLng(18.813296729000747,78.6311137676239); 
+var cline4=new google.maps.LatLng(18.810026580470034,78.64011526107788); 
+var cline5=new google.maps.LatLng(18.80988439865688,78.64057660102844);
+var cline6=new google.maps.LatLng(18.809559411204106,78.64259362220764);
+var cline7=new google.maps.LatLng(18.809640658126153,78.64340901374817);
+var cline8=new google.maps.LatLng(18.811072628686354,78.65171313285828);
+var cline9=new google.maps.LatLng(18.81124527679563,78.6522388458252);
+var cline10=new google.maps.LatLng(18.81124527679563,78.65261435508728);
+var cline11=new google.maps.LatLng(18.811671818423477,78.65498542785645);
+var cline12=new google.maps.LatLng(18.811529638001055,78.65545749664307);
+var cline13=new google.maps.LatLng(18.81169212990258,78.65624070167542);
+var cline14=new google.maps.LatLng(18.811996801794837,78.65678787231445);
+var cline15=new google.maps.LatLng(18.812078047539572,78.6581289768219);
+var cline16=new google.maps.LatLng(18.81175306432519,78.66018891334534);
+var cline17=new google.maps.LatLng(18.810422657744386,78.66268873214722);
+var cline18=new google.maps.LatLng(18.808635224703742,78.66466283798218);
+var cline19=new google.maps.LatLng(18.808411794238218,78.66480231285095);
+var cline20=new google.maps.LatLng(18.806929020902334,78.66652965545654);
+var cline21=new google.maps.LatLng(18.80560873227568,78.66857886314392);
+var cline22=new google.maps.LatLng(18.80195249431735,78.67438316345215);
+var cline23=new google.maps.LatLng(18.80182046201602,78.67470502853394);
+var cline24=new google.maps.LatLng(18.801119673451844,78.67575645446777);
+var cline25=new google.maps.LatLng(18.799941529578916,78.67762327194214);
+var cline26=new google.maps.LatLng(18.799860277973337,78.67778420448303);
+var cline27=new google.maps.LatLng(18.798936038199116,78.6791467666626);
+var cline28=new google.maps.LatLng(18.79726020588473,78.68187189102173);
+var cline29=new google.maps.LatLng(18.791237228392305,78.6914849281311);
+var cline30=new google.maps.LatLng(18.79050592472012,78.69253635406494);
+var cline31=new google.maps.LatLng(18.78887063696252,78.6939525604248);
+var cline32=new google.maps.LatLng(18.782969249106728,78.69801878929138);
+var cline33=new google.maps.LatLng(18.78251216224682,78.69819045066833);
+var cline34=new google.maps.LatLng(18.78211601929846,78.69844794273376);
+var cline35=new google.maps.LatLng(18.781973813910295,78.69864106178284);
+var cline36=new google.maps.LatLng(18.780419704344844,78.70003581047058);
+var cline37=new google.maps.LatLng(18.780013398826764,78.70063662528992);
+var cline38=new google.maps.LatLng(18.77949535787029,78.70198845863342);
+var cline39=new google.maps.LatLng(18.779414096399268,78.70359778404236);
+var cline40=new google.maps.LatLng(18.779607092328945,78.70467066764832);
+var cline41=new google.maps.LatLng(18.779932137605577,78.70481014251709);
+var cline42=new google.maps.LatLng(18.780104817653758,78.70505690574646);
+var cline43=new google.maps.LatLng(18.780267339890386,78.70558261871338);
+var cline44=new google.maps.LatLng(18.780216551708282,78.70580792427063);
+var cline45=new google.maps.LatLng(18.780531438190554,78.70665550231934);
+var cline46=new google.maps.LatLng(18.780643171962172,78.70720267295837);
+var cline47=new google.maps.LatLng(18.780826008883174,78.70782494544983);
+var cline48=new google.maps.LatLng(18.781577669696095,78.70925188064575);
+var cline49=new google.maps.LatLng(18.785498440647697,78.71273875236511);
+var cline50=new google.maps.LatLng(18.786829044245888,78.71377944946289);
+var cline51=new google.maps.LatLng(18.787093132259493,78.7140691280365);
+var cline52=new google.maps.LatLng(18.78741816309243,78.71428370475769);
+var cline53=new google.maps.LatLng(18.787844765108765,78.71454119682312);
+var cline54=new google.maps.LatLng(18.790830948966516,78.71677279472351);
+var cline55=new google.maps.LatLng(18.792344334852494,78.71885418891907);
+var cline56=new google.maps.LatLng(18.793085787402593,78.72117161750793);
+var cline57=new google.maps.LatLng(18.793613943392213,78.72614979743958);
+var cline58=new google.maps.LatLng(18.794619466561873,78.73622417449951);
+var cline59=new google.maps.LatLng(18.795350752367778,78.74353051185608);
+var cline60=new google.maps.LatLng(18.79589921463759,78.74857306480408);
+var cline61=new google.maps.LatLng(18.795889057945132,78.75062227249146);
+var cline62=new google.maps.LatLng(18.795604670307405,78.75205993652344);
+var cline63=new google.maps.LatLng(18.79353268873241,78.75775694847107);
+var cline64=new google.maps.LatLng(18.78698140276581,78.77459049224854);
+var cline65=new google.maps.LatLng(18.784421761340344,78.78117799758911);
+var cline66=new google.maps.LatLng(18.782573107233137,78.78564119338989);
+var cline67=new google.maps.LatLng(18.78230901213324,78.78725051879883);
+var cline68=new google.maps.LatLng(18.78252231974607,78.79196047782898);
+var ip=[cline,cline1,cline2,cline3,cline4,cline5,cline6,cline7,cline8,cline9,cline10,cline11,cline12,cline13,cline14,cline15,cline16,cline17,cline18,cline19,cline20,cline21,cline22,cline23,cline24,cline25,cline26,cline27,cline28,cline29,cline30,cline31,cline32,cline33,cline34,cline35,cline36,cline37,cline38,cline39,cline40,cline41,cline42,cline43,cline44,cline45,cline46,cline47,cline48,cline49,cline50,cline51,cline52,cline53,cline54,cline55,cline56,cline57,cline58,cline59,cline60,cline61,cline62,cline63,cline64,cline65,cline66,cline67,cline68];
+var stavanger=new google.maps.LatLng(58.983991,5.734863);
+var amsterdam=new google.maps.LatLng(52.395715,4.888916);
+var london=new google.maps.LatLng(51.508742,-0.120850);
+
+function initialize()
+{
+var mapProp = {
+  center:myCenter,
+  zoom:16,
+   panControl:true,
+    zoomControl:true,
+    mapTypeControl:true,
+    scaleControl:true,
+    streetViewControl:true,
+    overviewMapControl:true,
+    rotateControl:true,   // adds all options*/
+  mapTypeId:google.maps.MapTypeId.ROADMAP,
+  //disableDefaultUI:true, // for disabling all features
+  };
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+//marker
+var marker=new google.maps.Marker({
+  position:myCenter,
+  animation:google.maps.Animation.BOUNCE,
+  //icon:'bf.png'
+  });
+marker.setMap(map);
+//polyline
+var myTrip=[stavanger,amsterdam,london];
+var flightPath=new google.maps.Polyline({
+  path:ip,
+  strokeColor:"#00FFFF",
+  strokeOpacity:0.8,
+  strokeWeight:2
+  });
+
+flightPath.setMap(map);
+//polygon
+var myTrip1=[stavanger,amsterdam,london,stavanger];
+var flightPath=new google.maps.Polygon({
+  path:myTrip1,
+  strokeColor:"#0000FF",
+  strokeOpacity:0.8,
+  strokeWeight:2,
+  fillColor:"#0000FF",
+  fillOpacity:0.4
+  });
+
+//flightPath.setMap(map);
+//CIRCE
+var myCity = new google.maps.Circle({
+  center:amsterdam,
+  radius:20000,
+  strokeColor:"#0000FF",
+  strokeOpacity:0.8,
+  strokeWeight:2,
+  fillColor:"#0000FF",
+  fillOpacity:0.4
+  });
+
+//myCity.setMap(map);
+//info window
+var infowindow = new google.maps.InfoWindow({
+  content:"kmc @ vellula"
+  });
+infowindow.open(map,marker);
+//infowindow.open(map,amsterdam);
+//events 
+google.maps.event.addListener(marker,'click',function() {
+  map.setZoom(9);
+  map.setCenter(marker.getPosition());
+  });
+//center change pan
+/*
+google.maps.event.addListener(map,'center_changed',function() {
+// 3 seconds after the center of the map has changed, pan back to the marker
+  window.setTimeout(function() {
+    map.panTo(marker.getPosition());
+  },100000);
+  });*/
+ 
+ //custom marker creation 
+  google.maps.event.addListener(map, 'click', function(event) {
+  placeMarker(event.latLng);
+  //placeCircle(event.latLng);
+  });
+
+function placeMarker(location) {
+  var marker = new google.maps.Marker({
+    position: location,
+    map: map,
+  });
+  var dist=getDistance(myCenter,location);
+  var dist1=google.maps.geometry.spherical.computeDistanceBetween(myCenter,location);
+  var chainage=getChainage(location);
+  //document.write(location.lat() +',' + location.lng());
+  data=data+location.lat() +',' + location.lng()+';</br>';
+  var infowindow = new google.maps.InfoWindow({
+    content: 'chainage:'+chainage+' </br> distance: '+dist+'-'+dist1+' </br>Latitude: ' + location.lat() +    ',' + location.lng()
+  });
+  infowindow.open(map,marker);
+}
+function getChainage(location){
+var ch=42160;
+for(var i=0;i<ip.length;i++){
+var a=getDistance(ip[i],location);
+if((i+1)!=ip.length){
+var b=getDistance(ip[i],ip[i+1]);}else{
+b=a;}
+if(a<b){
+ch+=a; break;
+
+}else{ch+=b;}
+}
+ch=ch/1000;
+return ch;
+}
+
+function placeCircle(location) {
+  var nc = new google.maps.Circle({
+    center:location,
+  radius:200000*Math.random(),
+  strokeColor:"#0000FF",
+  strokeOpacity:0.8,
+  strokeWeight:2,
+  fillColor:"#0000FF",
+  fillOpacity:0.4
+  });
+ nc.setMap(map); 
+  
+}
+var rad = function(x) {
+  return x * Math.PI / 180;
+};
+
+var getDistance = function(p1, p2) {
+  var R = 6378137; // Earth’s mean radius in meter
+  var dLat = rad(p2.lat() - p1.lat());
+  var dLong = rad(p2.lng() - p1.lng());
+  var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(rad(p1.lat())) * Math.cos(rad(p2.lat())) *
+    Math.sin(dLong / 2) * Math.sin(dLong / 2);
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  var d = R * c;
+  return d; // returns the distance in meter
+};
+
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</head>
+
+<body>
+<div id="googleMap" style="width:1000px;height:880px;"></div>
+
+</body>
+</html>
