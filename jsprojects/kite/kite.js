@@ -93,8 +93,8 @@ var agy=0;
 var cx = 500;
 var cy = 100;
 var cz= 100;
-var px=100;
-var py=100;
+var px=600;
+var py=550;
 function krot(){
     
     if(cy>650){
@@ -110,8 +110,8 @@ function krot(){
         cy+=Math.round(5*(Math.random()-0.5));
         //cy++;
         //cz+=Math.round(20*(Math.random()-0.5));
-        px++;
-        py++;
+        //px++;
+        //py++;
         cz=cz+3;
         //cy=cy+2;
     }
@@ -131,4 +131,34 @@ function krot(){
 }
 //drawperspect(1200,600,50,600,300,1000,10);
 //paintkite3d(800,600,100,100,100,0,0,90,kid,600,300,1000,1200,600,50);
+var svg=document.getElementById("svgbox");
+svg.onmousedown = function(event) {
+
+    //px = event.clientX;
+    //py = event.clientY;
+    moveAt(event.clientX, event.clientY);
+  
+    // moves the ball at (pageX, pageY) coordinates
+    // taking initial shifts into account
+    function moveAt(pageX, pageY) {
+        px = pageX;
+        py = pageY;
+    }
+  
+    function onMouseMove(event) {
+      moveAt(event.pageX, event.pageY);
+    }
+  
+    // move the ball on mousemove
+    document.addEventListener('mousemove', onMouseMove);
+  
+    // drop the ball, remove unneeded handlers
+    svg.onmouseup = function() {
+      document.removeEventListener('mousemove', onMouseMove);
+      svg.onmouseup = null;
+    };
+  
+  };
+  
+  
 setInterval(krot,40);
