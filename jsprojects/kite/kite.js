@@ -136,13 +136,15 @@ svg.onmousedown = function(event) {
 
     //px = event.clientX;
     //py = event.clientY;
+    var xdif=px-event.clientX;
+    var ydif=py-event.clientY;
     moveAt(event.clientX, event.clientY);
   
     // moves the ball at (pageX, pageY) coordinates
     // taking initial shifts into account
     function moveAt(pageX, pageY) {
-        px = pageX;
-        py = pageY;
+        px =xdif+ pageX;
+        py =ydif+pageY;
     }
   
     function onMouseMove(event) {
