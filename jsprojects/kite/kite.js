@@ -90,41 +90,61 @@ var tid="thread";
 var agz=0;
 var agx=0;
 var agy=0;
-var cx = 500;
-var cy = 100;
+var cx = 800;
+var cy = 700;
 var cz= 100;
-var px=600;
-var py=550;
+var px=800;
+var py=600;
+var angflag=1;
+var xaflag=1;
+var yaflag=1;
+var angswing=10;
+var swingflag=true;
 function krot(){
     
-    if(cy>650){
+    if(cy>750){
         cy=650;
-        agx=45;
+        agx=90;
         agy=0;
         agz=0;
     }else{
-        agz+=Math.round(3*(Math.random()-0.5));
-        agx+=Math.round(2*(Math.random()-0.5));
-        agy+=Math.round(15*(Math.random()-0.5));
-        cx+=Math.round(20*(Math.random()-0.5));
-        cy+=Math.round(5*(Math.random()-0.5));
+        if(agz>angswing){
+            angflag=-1;
+        }else if(agz<-angswing){
+            angflag=1;
+        }
+        if(agx>15){
+            xaflag=-1;
+        }else if(agx<-15){
+            xaflag=1;
+        }
+        if(agy>20){
+            yaflag=-1;
+        }else if(agy<-20){
+            yaflag=1;
+        }
+        agz+=angflag*Math.round(4*(Math.random()));
+        agx+=xaflag*Math.round(2*(Math.random()));
+        agy+=yaflag*Math.round(3*(Math.random()));
+        //cx+=Math.round(20*(Math.random()-0.5));
+        //cy+=Math.round(5*(Math.random()-0.5));
         //cy++;
         //cz+=Math.round(20*(Math.random()-0.5));
         //px++;
         //py++;
-        cz=cz+3;
+        //cz=cz+3;
         //cy=cy+2;
     }
     //paintkite(cx,cy,50,50,ag,kid);
-    drawperspect(1200,700,50,px,py,1000,10);
-    paintkite3d(cx,cy,cz,100,100,agz,agx,agy,kid,px,py,1000,1200,700,50);
+    drawperspect(1650,800,50,px,py,1000,10);
+    paintkite3d(cx,cy,cz,100,100,agz,agx,agy,kid,px,py,5000,1650,800,50);
     
     //px++;
     
-    if(px>1200){
+    if(px>1650){
         px=10;
     }
-    if(py>700){
+    if(py>800){
         py=10;
     }
 
@@ -162,5 +182,56 @@ svg.onmousedown = function(event) {
   
   };
   
+  document.onkeydown = checkKey;
+
+function checkKey(e) {
+
+    e = e || window.event;
+
+    if (e.keyCode == '38') {
+        //alert("up button");
+        cx=cx-Math.round(1*Math.sin(agz*Math.PI/180));
+        cy=cy-Math.round(2*Math.cos(agz*Math.PI/180));
+        cz=cz+3;
+    }
+    else if (e.keyCode == '40') {
+        // down arrow
+        cy=cy+10;
+        cz-=10;
+    }
+    else if (e.keyCode == '37') {
+       // left arrow
+       cx=cx-10;
+    }
+    else if (e.keyCode == '39') {
+       // right arrow
+       cx=cx+10;
+
+    }
+    else if (e.keyCode == '82') {
+        // r 82 ,release thread
+        cz=cz+5;
+ 
+     }
+     else if (e.keyCode == '84') {
+        // t 84 , tight thread
+        cz-=10;
+        cy--;
+ 
+     }
+     else if (e.keyCode == '83') {
+        // t 83 , kite will rotate
+        if(swingflag){
+        angswing=500;
+        swingflag=false;}
+        else{
+            angswing=10;
+            swingflag=true;
+        }
+
+ 
+     }
+
+}
   
 setInterval(krot,40);
