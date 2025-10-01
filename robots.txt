@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vamshiraghav.github.io/sitemap.xml
